@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Dear Chaise,</h2>
+        <p>Will you be my Valentine?</p>
+        <div class="heart">❤️</div>
+        <button class="button" onclick="respond('yes')">Yes ❤️😊</button>
+        <button class="button" onclick="respond('no')">No</button>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        function respond(answer) {
+            let responseText = answer === 'yes' ? 'YAY ❤️😊' : 'WOMPWOMP';
+            document.getElementById('response').innerText = responseText;
+        }
+    </script>
+</body>
+</html>
